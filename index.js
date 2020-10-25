@@ -2,6 +2,7 @@ const express = require('express')
 const server = express()
 
 server.use(express.json())
+server.use("/api/projects", projectRouter)
 
 const PORT = process.env.PORT || 5000;
 
