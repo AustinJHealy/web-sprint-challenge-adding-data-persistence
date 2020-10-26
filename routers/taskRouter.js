@@ -14,6 +14,16 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+  db.getProjectTasks(req.params.id)
+    .then((tasks) => {
+      res.status(200).json(tasks);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.post("/", (req, res) => {
   db.insertTask(req.body)
     .then(res.status(200).json(req.body))
