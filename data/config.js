@@ -22,7 +22,7 @@ function insertResource(resource) {
 }
 
 function getAllTasks() {
-  return db("tasks").join("projects", "projects.id", "tasks.project_id");
+  return db("tasks");
 }
 
 function insertTask(task) {
